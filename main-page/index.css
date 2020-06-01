@@ -9,10 +9,6 @@ body{
     color: #8190A5;
 }
 
-footer{
-    background-color: #47525E;
-}
-
 .navbar-brand{
     color: rgba(255, 240, 27, 0.98);
     font-family: 'Abril Fatface', sans-serif;
@@ -20,6 +16,59 @@ footer{
     font-weight: 400;
     line-height: 49px;
     text-align: left; 
+}
+
+footer {
+    display: flex;
+    background-color: #47525E;
+    padding: 3rem 5rem;
+}
+
+footer .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20rem;
+}
+
+footer .links a {
+    display: block;
+    color: #F7F7F7;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+}
+
+footer .signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20rem;
+}
+
+footer .signup a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+footer .signup .join {
+    color: #47525E;
+    padding: 0.75rem 2rem;
+
+    font-weight: bold;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .socials img {
+    display: block;
+    width: 18px;
 }
 
 
