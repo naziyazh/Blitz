@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato';
+}
+
+.logo {
+    font-size: 38px;
+    font-family: 'Abril Fatface';
+    font-weight: normal;
+    color: #FFF01B;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #343F4B;
+}
+
+nav h1 {
+    margin-left: 1rem;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: 25rem;
+}
+
+nav ul li {
+    color: #FFFFFF;
+    padding: 1rem 1.25rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a img {
+    width: 3rem;
+    filter: invert(1);
+}
+
+.profile-wrapper {
+    padding: 2.5rem 3rem;
+    background-color: rgba(150, 159, 170, 0.47);
+}
+
+.profile, .workouts {
+    background-color: #FFFFFF;
+    border: 1px solid #969FAA;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.profile {
+    display: flex;
+    padding: 3rem;
+}
+
+.profile img {
+    display: block;
+    width: 260px;
+    opacity: 0.5;
+}
+
+.profile-text {
+    padding: 1rem 0;
+    padding-left: 6rem;
+}
+
+.profile-text > * {
+    padding-bottom: 1.5rem;
+}
+
+.profile-text h1 {
+    font-size: 3rem;
+    color: #47525E;
+}
+
+.profile-text h2 {
+    font-size: 2rem;
+    color: #5A6978;
+}
+
+.profile-text a {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #47525E;
+    border: 2px solid #47525E;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+}
+
+.workouts {
+    display: flex;
+}
+
+.workouts .tabs {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.workouts .tabs a {
+    padding: 1.25rem 2rem;
+    color: #5A6978;
+    text-decoration: none;
+    border-bottom: 1px solid #969FAA;
+    border-right: 1px solid #969FAA;
+}
+
+.workouts .tabs a:last-child {
+    border-bottom: none;
+}
+
+.workouts .tabs .active {
+    font-weight: bold;
+}
+
+.workouts .tab {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.workouts .tab p {
+    font-size: 1.75rem;
+    color: #5A6978;
+    margin-bottom: 1rem;
+}
+
+.workouts .tab a {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #47525E;
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    background-color: #47525E;
+    padding: 3rem 5rem;
+}
+
+footer .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20rem;
+}
+
+footer .links a {
+    display: block;
+    color: #F7F7F7;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+}
+
+footer .signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20rem;
+}
+
+footer .signup a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+footer .signup .join {
+    color: #47525E;
+    padding: 0.75rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .socials img {
+    display: block;
+    width: 18px;
+}
