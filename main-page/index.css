@@ -1,8 +1,26 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
 .jumbotron{
     background-image: url('components/gym.jpg');
     background-size: cover;
 }
+#description-cards p{
+    color: #8190A5;
+}
 
-/* .search{
-    width: 40px;
-} */
+footer{
+    background-color: #47525E;
+}
+
+.navbar-brand{
+    color: rgba(255, 240, 27, 0.98);
+    font-family: 'Abril Fatface', sans-serif;
+    font-size: 5em;
+    font-weight: 400;
+    line-height: 49px;
+    text-align: left; 
+}
+
+
+
