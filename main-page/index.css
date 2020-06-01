@@ -1,75 +1,44 @@
 body{
     font-family: 'Lato', sans-serif;
 }
-.jumbotron{
+.picture{
     background-image: url('components/gym.jpg');
     background-size: cover;
+    padding-bottom: 200px;
+
+}
+
+.navbar-nav{
+    font-size: 1.1rem;
 }
 #description-cards p{
     color: #8190A5;
 }
 
-.navbar-brand{
-    color: rgba(255, 240, 27, 0.98);
-    font-family: 'Abril Fatface', sans-serif;
-    font-size: 5em;
-    font-weight: 400;
-    line-height: 49px;
-    text-align: left; 
-}
-
 footer {
-    display: flex;
     background-color: #47525E;
-    padding: 3rem 5rem;
+    color: white;
+    font-size: 1.1rem;
+
 }
 
-footer .links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-left: 20rem;
+footer img {
+    width: 20px;
+    margin-left: 5px;
 }
 
-footer .links a {
-    display: block;
+.socials,
+.menu li {
+   padding: 5px 5px;
+}
+
+
+footer .menu a{
     color: #F7F7F7;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
 }
 
-footer .signup {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 20rem;
-}
 
-footer .signup a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-footer .signup .join {
-    color: #47525E;
-    padding: 0.75rem 2rem;
-
-    font-weight: bold;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-}
-
-footer .socials {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer .socials img {
-    display: block;
-    width: 18px;
-}
 
 
 

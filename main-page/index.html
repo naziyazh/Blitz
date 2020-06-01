@@ -11,63 +11,62 @@
     <title>Main Page</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-transparent fixed-top">
-      <div class="container"> 
-      <h4 class="navbar-brand">Blitz</h4>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#about">Featured</a>
-          <a class="nav-item nav-link" href="#speakers">Contribute</a>
-          <a class="nav-item nav-link" href="#schedule">Contact Us</a>
+    <div class="picture">
+      <nav class="navbar navbar-expand-lg navbar navbar-dark bg-transparent">
+        <div class="container"> 
+        <h2  style="color: #FFF01B; font-family:'Abril Fatface','Arial';">Blitz</h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-item nav-link mx-2 text-light" href="">Home</a>
+            <a class="nav-item nav-link mx-2 text-light" href="">Featured</a>
+            <a class="nav-item nav-link mx-2 text-light" href="">Contribute</a>
+            <a class="nav-item nav-link text-light" href="">Contact Us</a>
+          </div>
         </div>
-      </div>
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#register">Sign Up</button>
-        <button class="btn btn-secondary my-2 my-sm-0 login ml-3" type="button">Log In</button>
-        </form>
-      </div>
-    </div>
-    </nav>
-    
-      <!--jumbotron    -->
-    <div class="jumbotron jumbotron-fluid text-white ">
-      <div class="container text-center pt-5">
-        <h3 id="quote">Action is the foundational key to all success.</h3>
-        <div class="row">
-            <div class="input-group ml-auto mr-auto col-md col-xl-5 mt-3">
-              <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">Search</button>
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn btn-primary my-2 my-sm-0 px-4" type="button" data-toggle="modal" data-target="#register">Sign Up</button>
+          <button class="btn btn-dark my-2 my-sm-0 login ml-4 px-4" type="button" data-toggle="modal" data-target="#login">Log In</button>
+          </form>
+        </div>
+      </nav>
+      
+        <!--jumbotron    -->
+        <div class="container text-center mt-5 pt-5">
+          <h3 id="quote" class="text-white">Action is the foundational key to all success.</h3>
+          <div class="row">
+              <div class="input-group ml-auto mr-auto col-md col-xl-6 mt-3">
+                <input type="text" class="form-control" placeholder="Search workouts" aria-label="Search workouts" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary px-4" type="button">Search</button>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
+            </div>
       
-      </div>
+        </div>
 
     <!--/jumbotron    -->
     
     <!--bottom cards-->
-    <div class="container pt-2 mb-2"  id = "description-cards">
+    <div class="container mt-4 mb-4"  id = "description-cards">
       <div class="row" >
         <div class="col-md order-md-1">
             <img src = "components/image.png" alt="learn from best" class = "mb-4 img-fluid rounded d-sm-block d-none ">
-            <h3 class= "mb-4">Learn from the best</h3>
+            <h4 class= "mb-4">Learn from the best</h3>
             <p>Blitz provides a big selection of workouts from the leaders of the field. Explore your role model's routine and customize it as you like.</p>
         </div>
         <div class="col-md order-md-2">
             <img src = "components/designroutine.png" alt="design your routine" class = "mb-4 img-fluid rounded d-sm-block d-none ">
-            <h3 class= "mb-4">Design your routine</h3>
+            <h4 class= "mb-4">Design your routine</h3>
             <p>Search workouts based on your level, goals, and needs. Blitz provides a wide selection of workouts for anyone, for free.</p>
           
         </div>
         <div class="col-md order-md-3">
           <img src = "components/explorealternative.png" alt="explore alternatives" class = "mb-4 img-fluid rounded d-sm-block d-none ">
-            <h3 class= "mb-4">Explore alternatives</h3>
+            <h4 class= "mb-4">Explore alternatives</h3>
             <p>Tired of the same exercises?</p>
             <p>Explore alternative workouts such as CrossFit, callisthenics, yoga, etc.</p>
           
@@ -78,36 +77,46 @@
  
     <!--footer  -->
     <footer>
-      <h1 class="logo">Blitz</h1>
-      <div class="links">
-          <a href="#">Home</a>
-          <a href="#">Search</a>
-          <a href="#">About</a>
-          <a href="#">Privacy</a>
-          <a href="#">Features</a>
-          <a href="#">Community</a>
-          <a href="#">Contact us</a>
-      </div>
-      <div class="signup">
-          <p>Not a user?</p>
-          <button type="button" data-toggle="modal" data-target="#register">Join Us</button>
-          <div class="socials">
-              <a href="#"><img src="../images/socials/facebook.png"></a>
-              <a href="#"><img src="../images/socials/instagram.png"></a>
-              <a href="#"><img src="../images/socials/snapchat.png"></a>
-              <a href="#"><img src="../images/socials/twitter.png"></a>
-              <a href="#"><img src="../images/socials/youtube.png"></a>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col">
+            <h2  style="color: #FFF01B; font-family:'Abril Fatface','Arial'; margin-left: 16px;">Blitz</h2>
           </div>
-      </div>
+          <div class="col">
+            <ul class = "menu" style="list-style: none;">
+              <li><a href="">Home</a></li>
+              <li><a href="">Featured</a></li>
+              <li><a href="">Contribute</a></li>
+              <li><a href="">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul style="list-style: none;">
+              <li><p class="font-weight-bold">Not a user?</p>
+              <button type="button" data-toggle="modal" data-target="#register" class="btn btn-light px-5">Join Us</button>
+              </li>
+              <li class = "socials pt-3">
+                <a href="#"><img src="../Profile main page/images/socials/facebook.png"></a>
+                <a href="#"><img src="../Profile main page/images/socials/instagram.png"></a>
+                <a href="#"><img src="../Profile main page/images/socials/snapchat.png"></a>
+                <a href="#"><img src="../Profile main page/images/socials/twitter.png"></a>
+                <a href="#"><img src="../Profile main page/images/socials/youtube.png"></a>
+              </li>
+          </ul>
+          </div>
+          </div>
+
+          </div>
+        </div>
   </footer>
   <!--footer  -->
  
 <!-- Modal -->
-<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+        <h5 class="modal-title">Sign Up</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -138,15 +147,45 @@
             <input type="confirm-password" class="form-control" id="confirm-password" placeholder="Confirm">
           </div>
   
-          <button type="submit" class="btn btn-primary btn-large">Sign Up</button>
+          <button type="submit" class="btn btn-primary btn-large signup">Sign Up</button>
       </form>
        <!--    registration forms    -->
       </div>
     </div>
   </div>
 </div>
-  
-        
+<!--modal-->
+
+<!--Modal-->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Log In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--   login form    -->
+        <form>
+          <div class="form-group">
+            <label for="email-login">Email:</label>
+            <input type="email" class="form-control" id="email-login" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="password-login">Password:</label>
+            <input type="password" class="form-control" id="password-login" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-dark btn-large button-login">Log In</button>
+      </form>
+       <!--    login form    -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal-->    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
