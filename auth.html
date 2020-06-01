@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="auth.css" />
+
+  </head>
+  <body>
+    <button class="sign-Up" onclick="openUpForm()" >Sign Up</button>
+    <button class="sign-In" onclick="openInForm()" >Sign in</button>
+    <button id="signout" onclick="signOut()" style="display: none" >Sign Out</button>
+    <div class="form-popup" id="myForm">
+        <h1 id="signuplabel"></h1>
+        <form class="form-container">
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="pwd" required>
+          <div id="repeatDiv" style="display: none;">
+          <label for="repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="repeat" id="repeat" required>
+          </div>
+          <button type="button" class="btn" id="signup" onclick="signUp()" style="display: none;">Sign Up</button>
+          <button type="button" class="btn" id="signin" onclick="signIn()" style="display: none;">Sign In</button>
+          <button class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+    
+    <script src="/__/firebase/init.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBs5aJhECS8s1bspUxdVk-hJH7FrlasDwc",
+          authDomain: "hci-project-817b4.firebaseapp.com",
+          databaseURL: "https://hci-project-817b4.firebaseio.com",
+          projectId: "hci-project-817b4",
+          storageBucket: "hci-project-817b4.appspot.com",
+          messagingSenderId: "1084392647243",
+          appId: "1:1084392647243:web:b8d31ad3108e563cd23bce",
+          measurementId: "G-D6VMGFT1W2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var database = firebase.database();
+        var auth = firebase.auth();
+      </script>
+      
+      <script src="./auth.js"></script>
+      
+  </body>
+</html>
