@@ -64,6 +64,7 @@ nav a img {
     margin-bottom: 3rem;
 }
 .center{margin: auto;
+    position: relative;
     height: 500px;
     width: 50%;
     background-color: #FFFFFF;  }
@@ -88,11 +89,17 @@ nav a img {
     margin-right:auto;
     width: 100%;
 } 
+.bold-texted-td{
+    font-weight: bold;
+}
 .link-to-ex{
     color: black;
 }
 .time-for-ex-or-set{
     text-align: right;
+}
+.table-title{
+    text-align: center;
 }
 .simpleTable td, .simpleTable th {
         border: 1px solid #ddd;
@@ -104,8 +111,9 @@ nav a img {
         padding-bottom: 12px;
         text-align: left;
       }
-
-
+.td-aligned-to-sento{
+    text-align: center;
+}
 .workoutDif{
     margin: auto;
     width: 50%;
