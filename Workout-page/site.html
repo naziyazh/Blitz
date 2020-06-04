@@ -2,25 +2,35 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Menin Unique Websitym:))))</title>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <link href="./blitz.css" rel="stylesheet" />
+    <title class="workout-name">Menin Unique Websitym:))))</title>
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" >
+    <link href="blitz.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&display=swap" rel="stylesheet">
   </head>
   <body>
    
     <!--Your HTML here-->
-    <nav>
-        <h1 class="logo">Blitz</h1>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Explore</a></li>
-            <li><a href="#">Contribute</a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
-        <a href="#"><img src="images/avatar.png"></a>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark">
+        <div class="container"> 
+        <h2  style="color: #FFF01B; font-family:'Abril Fatface','Arial';">Blitz</h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-item nav-link mx-2 text-light" href="">Home</a>
+            <a class="nav-item nav-link mx-2 text-light" href="">Featured</a>
+            <a class="nav-item nav-link mx-2 text-light" href="">Contribute</a>
+            <a class="nav-item nav-link text-light" href="">Contact Us</a>
+          </div>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <a href="../Profile main page/profile.html"><img src="images/avatar.png"></a>
+          <button id="btn3" class="btn btn-secondary my-2 mx-5 my-sm-0" type="button"  onclick="signOut()">Log Out</button>
+          </form>
+        </div>
+      </nav>
     <div class="for-back">
         <div class="whole-content">
             <div class="center">
@@ -50,29 +60,41 @@
             </div>
         </div>
     </div>
-    <footer>
-        <h1 class="logo">Blitz</h1>
-        <div class="links">
-            <a href="#">Home</a>
-            <a href="#">Search</a>
-            <a href="#">About</a>
-            <a href="#">Privacy</a>
-            <a href="#">Features</a>
-            <a href="#">Community</a>
-            <a href="#">Contact us</a>
-        </div>
-        <div class="signup">
-            <a href="#">Not a user?</a>
-            <a href="#" class="join">Join Us</a>
-            <div class="socials">
-                <a href="#"><img src="images/socials/facebook.png"></a>
-                <a href="#"><img src="images/socials/instagram.png"></a>
-                <a href="#"><img src="images/socials/snapchat.png"></a>
-                <a href="#"><img src="images/socials/twitter.png"></a>
-                <a href="#"><img src="images/socials/youtube.png"></a>
+     <!--footer  -->
+     <footer>
+        <div class="container py-5">
+          <div class="row">
+            <div class="col">
+              <h2  style="color: #FFF01B; font-family:'Abril Fatface','Arial'; margin-left: 16px;">Blitz</h2>
             </div>
-        </div>
+            <div class="col">
+              <ul class = "menu" style="list-style: none;">
+                <li><a href="">Home</a></li>
+                <li><a href="">Featured</a></li>
+                <li><a href="">Contribute</a></li>
+                <li><a href="">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul style="list-style: none;">
+                <li><p class="font-weight-bold">Not a user?</p>
+                <button type="button" data-toggle="modal" data-target="#register" class="btn btn-light px-5">Join Us</button>
+                </li>
+                <li class = "socials pt-3">
+                  <a href="#"><img src="../Profile main page/images/socials/facebook.png"></a>
+                  <a href="#"><img src="../Profile main page/images/socials/instagram.png"></a>
+                  <a href="#"><img src="../Profile main page/images/socials/snapchat.png"></a>
+                  <a href="#"><img src="../Profile main page/images/socials/twitter.png"></a>
+                  <a href="#"><img src="../Profile main page/images/socials/youtube.png"></a>
+                </li>
+            </ul>
+            </div>
+            </div>
+  
+            </div>
+          </div>
     </footer>
+    <!--footer  -->
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>  
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
