@@ -11,50 +11,24 @@ body {
     font-family: 'Lato';
 }
 
-.logo {
-    font-size: 38px;
-    font-family: 'Abril Fatface';
-    font-weight: normal;
-    color: #FFF01B;
-}
-
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
     background-color: #343F4B;
 }
 
-nav h1 {
-    margin-left: 1rem;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    margin-left: 25rem;
-}
-
-nav ul li {
-    color: #FFFFFF;
-    padding: 1rem 1.25rem;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.navbar-nav{
+    font-size: 1.1rem;
 }
 
 nav a img {
     width: 3rem;
     filter: invert(1);
 }
+
+
 .for-back{
     padding: 2.5rem 3rem;
     background-color: rgba(150, 159, 170, 0.47);
+
 }
 .whole-content{
     background-color: #FFFFFF;
@@ -62,11 +36,17 @@ nav a img {
     border-radius: 10px;
     padding-bottom: 3rem;
     margin-bottom: 3rem;
+    padding-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 .center{margin: auto;
     height: 500px;
     width: 50%;
-    background-color: #FFFFFF;  }
+    background-color: #FFFFFF; 
+ }
+
 .titleofworkout{
     text-align: center;
 }
@@ -116,48 +96,23 @@ footer {
     padding: 3rem 5rem;
 }
 
-footer .links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-left: 20rem;
+footer {
+    background-color: #47525E;
+    color: white;
+    font-size: 1.1rem;
 }
-footer .links a {
-    display: block;
+
+footer img {
+    width: 20px;
+    margin-left: 5px;
+}
+
+.socials,
+.menu li {
+   padding: 5px 5px;
+}
+
+footer .menu a{
     color: #F7F7F7;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
-}
-
-footer .signup {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 20rem;
-}
-
-footer .signup a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-footer .signup .join {
-    color: #47525E;
-    padding: 0.75rem 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-}
-
-footer .socials {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer .socials img {
-    display: block;
-    width: 18px;
 }
