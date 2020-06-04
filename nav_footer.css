@@ -1,0 +1,40 @@
+body {
+    font-family: 'Lato';
+}
+
+nav {
+    background-color: #343F4B;
+}
+
+.navbar-nav{
+    font-size: 1.1rem;
+}
+
+nav a img {
+    width: 3rem;
+    filter: invert(1);
+}
+
+
+footer {
+    background-color: #47525E;
+    color: white;
+    font-size: 1.1rem;
+
+}
+
+footer img {
+    width: 20px;
+    margin-left: 5px;
+}
+
+.socials,
+.menu li {
+   padding: 5px 5px;
+}
+
+
+footer .menu a{
+    color: #F7F7F7;
+    text-decoration: none;
+}
