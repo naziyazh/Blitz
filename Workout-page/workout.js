@@ -45,7 +45,7 @@ function FillTables(name, number_of_tables, category, description, rating){
             cell2.innerHTML = hist[i]["second"]
             //cell3.innerHTML = hist[i]["third"]
             let tempo = String(hist[i]["first"]);
-            if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+            if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                 cell1.className="bold-texted-td";
                 cell2.className='time-for-ex-or-set';
             }
@@ -76,7 +76,7 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
                 }
@@ -107,7 +107,7 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
                 }
@@ -141,7 +141,7 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
                 }
@@ -175,7 +175,7 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
                 }
@@ -187,6 +187,21 @@ function FillTables(name, number_of_tables, category, description, rating){
         })
     }
 }
+function FillSento(name){
+    document.getElementById("titleofworkout").innerHTML = name;
+    firebase.database().ref(name+"/Duration").once('value', function(snapshot){
+        let myValue = snapshot.val();    
+        document.getElementById("Durasyon").innerHTML = "Duration: "+myValue;
+    })
+    firebase.database().ref(name+"/Frequency").once('value', function(snapshot){
+        let myValue = snapshot.val();    
+        document.getElementById("Frekansi").innerHTML ="Frequency: " + myValue;
+    })
+    if(name=="Zac Efron's \"Baywatch\" Workout"){
+        document.getElementById("fotka").innerHTML = "<img class=\"profile-photo-of-role-model\"src=\"./images/Zac.jpg\" alt=\"Photo\">"
+    }
+    else{document.getElementById("fotka").innerHTML = "<img class=\"profile-photo-of-role-model\"src=\"./images/"+name+".jpg\" alt=\"Photo\">"}
+}
 var freq = 0;
 function get_freq(){
     return firebase.database().ref(name+"/Frequency").once('value',function(snapshot){
@@ -196,7 +211,13 @@ function get_freq(){
     })
 };
 get_freq();
+//FillSento("Zac Efron's \"Baywatch\" Workout");
+//FillSento("Woodley's UFC title workout");
+//FillSento("Cristiano Ronaldo's workout routine");
+FillSento("Alexanda Daddario's Full-Body Workout");
+//FillSento("Travis Stevens' Weight Lifting Program");
 //FillTables("Zac Efron's \"Baywatch\" Workout", 3);
 //FillTables("Woodley's UFC title workout", 1);
 //FillTables("Cristiano Ronaldo's workout routine", 5);
 FillTables("Alexanda Daddario's Full-Body Workout", 1);
+//FillTables("Travis Stevens' Weight Lifting Program", 3);
