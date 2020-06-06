@@ -212,6 +212,15 @@ function get_freq(){
         console.log(freq);
     })
 };
+var buton = document.getElementById("atml");
+var buto = document.getElementById("gtml");
+buton.onclick= function(){
+    buton.innerHTML = "Added to my list";
+    buton.className = "addedbut"
+    buton.disabled = true;
+    buto.innerHTML = "Go to my list";
+    buto.style.display = "block";
+}
 get_freq();
 //FillSento("Zac Efron's \"Baywatch\" Workout");
 //FillSento("Woodley's UFC title workout");
