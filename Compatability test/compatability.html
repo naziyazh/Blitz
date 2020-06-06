@@ -33,32 +33,36 @@
     <div class="wrapper">
         <div class="profile">
             <div class="profile-text">
-                <h2 style="font-weight: bold">Compatability Test</h2>
-                <table class = question>
-                    <tr> <td>
-                        Can you handle 15 km of running?
-                        <button class="truebut"><img src="images/true.png"> </button>
-                        <button class="falsebut"><img src="images/false.png"> </button>
+                <h2 class="title_of_comptest" id="ti">Loading the Compatability Test</h2>
+                <table class = question id="tablo">
+                    <tr> <td><text id="q1">
+                        </text>
+                        <button onclick="clik('q1', 'y', 'n')" class="truebut" id="q1y">&#10003;</button>
+                        <button onclick="clik('q1', 'n', 'y')"class="falsebut" id="q1n">X</button>
                     </td> </tr>
                     <tr> <td>
-                        Can you handle 15 km of running?
-                        <button class="truebut"><img src="images/true.png"> </button>
-                        <button class="falsebut"><img src="images/false.png"> </button>
+                      <text id="q2">
+                        </text>
+                        <button onclick="clik('q2', 'y', 'n')" class="truebut" id="q2y">&#10003;</button>
+                        <button onclick="clik('q2', 'n', 'y')"class="falsebut" id="q2n">X</button>
                     </td> </tr>
                     <tr> <td>
-                        Can you handle 15 km of running?
-                        <button class="truebut"><img src="images/true.png"> </button>
-                        <button class="falsebut"><img src="images/false.png"> </button>
+                      <text id="q3">
+                        </text>
+                        <button onclick="clik('q3', 'y', 'n')" class="truebut" id="q3y">&#10003;</button>
+                        <button onclick="clik('q3', 'n', 'y')"class="falsebut" id="q3n">X</button>
                     </td> </tr>
                     <tr> <td>
-                        Can you handle 15 km of running?
-                        <button class="truebut"><img src="images/true.png"> </button>
-                        <button class="falsebut"><img src="images/false.png"> </button>
+                      <text id="q4">
+                        </text>
+                        <button onclick="clik('q4', 'y', 'n')" class="truebut" id="q4y">&#10003;</button>
+                        <button onclick="clik('q4', 'n', 'y')"class="falsebut" id="q4n">X</button>
                     </td> </tr>
                     <tr> <td>
-                        Can you handle 15 km of running?
-                        <button class="truebut"><img src="images/true.png"> </button>
-                        <button class="falsebut"><img src="images/false.png"> </button>
+                      <text id="q5">
+                        </text>
+                        <button onclick="clik('q5', 'y', 'n')" class="truebut" id="q5y">&#10003;</button>
+                        <button onclick="clik('q5', 'n', 'y')"class="falsebut" id="q5n">X</button>
                     </td> </tr>
                 </table>
                 <button id="results">See the results</button>
@@ -100,6 +104,12 @@
         </div>
         </div>
 </footer>
+  <!--Added by Dooronbek-->
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="./comptest.js"></script>
+  <!-- here is the end of Dooronbek's edit-->
 </body>
 </html>
 

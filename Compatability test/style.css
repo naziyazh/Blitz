@@ -64,21 +64,40 @@ tr img {
     margin-left: 20px;
 }
 
-.truebut, .falsebut {
-    border: none;
+.falsebut, .truebut {
+    /*border: none;*/
     background-color: #FFFFFF;
     background-image: transparent url('/images/background.jpeg'), no-repeat;
-    margin:2px;
+    /*margin:2px;*/
     /* width: 25px; */
-    padding: 2px 2px;
+    /*padding: 2px 2px;*/
+    border-radius: 50%;
+    border: 1px solid rgb(122, 97, 97);
+    float: right;
+    margin: 3px;
+}
+.truebut:hover, .falsebut:hover{
+    background-color: grey;
+}
+.butcd {
+    /*border: none;*/
+    background-color:black;
+    /*margin:2px;*/
+    /* width: 25px; */
+    /*padding: 2px 2px;*/
+    border-radius: 50%;
+    border: 1px solid black;
+    color: white;
+    float: right;
+    margin: 3px;
 }
 
-.truebut {
+/*.truebut {
     margin-left: 9rem;
 }
 .falsebut {
     padding-right: 1px;
-}
+}*/
 
 
 #results {
@@ -113,4 +132,7 @@ footer img {
 footer .menu a{
     color: #F7F7F7;
     text-decoration: none;
+}
+.title_of_comptest{
+    font-weight: bold;
 }
