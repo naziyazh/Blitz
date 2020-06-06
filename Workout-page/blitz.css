@@ -15,7 +15,7 @@ nav {
     background-color: #343F4B;
 }
 
-.navbar-nav{
+.navbar-nav{    
     font-size: 1.1rem;
 }
 
@@ -41,24 +41,46 @@ nav a img {
     margin-right: auto;
     width: 70%;
 }
-.center{margin: auto;
+.center{
+    margin: auto;
     position: relative;
     height: 500px;
-    width: 50%;
+    width: 70%;
     background-color: #FFFFFF; 
  }
 
 .titleofworkout{
     text-align: center;
 }
+#fotka{
+    width:300px;
+    height:400px; 
+    float: left;    
+}
 .profile-photo-of-role-model{
     width:300px;
-    height:360px; 
+    height:400px; 
     float: left;
 }
 .right-to-image{
     vertical-align: bottom;
-
+    float: middle;
+    height: 400px;
+}
+.tekist{
+    margin:auto;
+    padding: 80px 0;
+    font-size: large;
+}
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 4px;
+}
+.button5:hover {
+    background-color: #555555;
+    color: white;
 }
 .simpleTable{
     border-collapse: collapse;
@@ -81,6 +103,10 @@ nav a img {
 .table-title{
     text-align: center;
 }
+.filt_table-title{
+    text-align: center;
+    margin-top: 70px;
+}
 .simpleTable td, .simpleTable th {
         border: 1px solid #ddd;
         padding: 8px;
@@ -91,11 +117,10 @@ nav a img {
         padding-bottom: 12px;
         text-align: left;
       }
-.td-aligned-to-sento{
-    text-align: center;
-}
 .workoutDif{
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
     width: 50%;
 }
 footer {

@@ -27,7 +27,14 @@ function FillTables(name, number_of_tables, category, description, rating){
         var myValue = snapshot.val();
         var KeyList = Object.keys(myValue);
         var table1 = document.getElementById("table1")
-        document.getElementById("table1-title").innerHTML = "Day#1"
+        if(number_of_tables==1){
+            document.getElementById("table1-title").innerHTML = "Training Day"
+            document.getElementById("table1-title").className = "filt_table-title"
+        }
+        else{
+            document.getElementById("table1-title").className = "filt_table-title"
+            document.getElementById("table1-title").innerHTML = "Day#1";
+        }
         for(let i=0; i<KeyList.length; i++){
             var current = KeyList[i];
             let e = {
@@ -45,7 +52,7 @@ function FillTables(name, number_of_tables, category, description, rating){
             cell2.innerHTML = hist[i]["second"]
             //cell3.innerHTML = hist[i]["third"]
             let tempo = String(hist[i]["first"]);
-            if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+            if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                 cell1.className="bold-texted-td";
                 cell2.className='time-for-ex-or-set';
             }
@@ -59,6 +66,7 @@ function FillTables(name, number_of_tables, category, description, rating){
             var KeyList = Object.keys(myValue);
             var table1 = document.getElementById("table2")
             document.getElementById("table2-title").innerHTML = "Day#2"
+            document.getElementById("table2-title").className = "filt_table-title"
             for(let i=0; i<KeyList.length; i++){
                 var current = KeyList[i];
                 let e = {
@@ -76,7 +84,7 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
                 }
@@ -90,6 +98,7 @@ function FillTables(name, number_of_tables, category, description, rating){
             var KeyList = Object.keys(myValue);
             var table1 = document.getElementById("table3")
             document.getElementById("table3-title").innerHTML = "Day#3"
+            document.getElementById("table3-title").className = "filt_table-title"
             for(let i=0; i<KeyList.length; i++){
                 var current = KeyList[i];
                 let e = {
@@ -107,12 +116,9 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
-                }
-                else{
-                    cell1.className="td-aligned-to-sento"
                 }
             }
             for(let i=0;i<hist.length;i++){hist.splice(i)}
@@ -124,6 +130,7 @@ function FillTables(name, number_of_tables, category, description, rating){
             var KeyList = Object.keys(myValue);
             var table1 = document.getElementById("table4")
             document.getElementById("table4-title").innerHTML = "Day#4"
+            document.getElementById("table4-title").className = "filt_table-title"
             for(let i=0; i<KeyList.length; i++){
                 var current = KeyList[i];
                 let e = {
@@ -141,12 +148,9 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
-                }
-                else{
-                    cell1.className="td-aligned-to-sento"
                 }
             }
             for(let i=0;i<hist.length;i++){hist.splice(i)}
@@ -158,6 +162,7 @@ function FillTables(name, number_of_tables, category, description, rating){
             var KeyList = Object.keys(myValue);
             var table1 = document.getElementById("table5")
             document.getElementById("table5-title").innerHTML = "Day#5"
+            document.getElementById("table5-title").className = "filt_table-title"
             for(let i=0; i<KeyList.length; i++){
                 var current = KeyList[i];
                 let e = {
@@ -175,17 +180,29 @@ function FillTables(name, number_of_tables, category, description, rating){
                 cell2.innerHTML = hist[i]["second"]
                 //cell3.innerHTML = hist[i]["third"]
                 let tempo = String(hist[i]["first"]);
-                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("circuit") || hist[i]["first"].includes("AMRAP")){
+                if(hist[i]["first"].includes("Superset") || hist[i]["first"].includes("Circuit") || hist[i]["first"].includes("AMRAP")){
                     cell1.className="bold-texted-td";
                     cell2.className='time-for-ex-or-set';
-                }
-                else{
-                    cell1.className="td-aligned-to-sento"
                 }
             }
             for(let i=0;i<hist.length;i++){hist.splice(i)}
         })
     }
+}
+function FillSento(name){
+    document.getElementById("titleofworkout").innerHTML = name;
+    firebase.database().ref(name+"/Duration").once('value', function(snapshot){
+        let myValue = snapshot.val();    
+        document.getElementById("Durasyon").innerHTML = "Duration: "+myValue;
+    })
+    firebase.database().ref(name+"/Frequency").once('value', function(snapshot){
+        let myValue = snapshot.val();    
+        document.getElementById("Frekansi").innerHTML ="Frequency: " + myValue;
+    })
+    if(name=="Zac Efron's \"Baywatch\" Workout"){
+        document.getElementById("fotka").innerHTML = "<img class=\"profile-photo-of-role-model\"src=\"./images/Zac.jpg\" alt=\"Photo\">"
+    }
+    else{document.getElementById("fotka").innerHTML = "<img class=\"profile-photo-of-role-model\"src=\"./images/"+name+".jpg\" alt=\"Photo\">"}
 }
 var freq = 0;
 function get_freq(){
@@ -196,7 +213,13 @@ function get_freq(){
     })
 };
 get_freq();
+//FillSento("Zac Efron's \"Baywatch\" Workout");
+//FillSento("Woodley's UFC title workout");
+//FillSento("Cristiano Ronaldo's workout routine");
+FillSento("Alexanda Daddario's Full-Body Workout");
+//FillSento("Travis Stevens' Weight Lifting Program");
 //FillTables("Zac Efron's \"Baywatch\" Workout", 3);
 //FillTables("Woodley's UFC title workout", 1);
 //FillTables("Cristiano Ronaldo's workout routine", 5);
 FillTables("Alexanda Daddario's Full-Body Workout", 1);
+//FillTables("Travis Stevens' Weight Lifting Program", 3);
