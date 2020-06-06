@@ -14,32 +14,11 @@ $( document ).ready(function() {
     //   firebase.initializeApp(firebaseConfig);
 
     //get search exercise names from database
-    function readFromDatabase(query){
-        var search_result = [];
-        return firebase.database().ref('/hci-project-817b4/').once('value', function(snapshot) {
-            var myValue = snapshot.val();
-            var keyList = Object.keys(myValue);
-            for (i = 0; i < keyList.length; i++){
-                var key = keyList[i];
-                if (key.contains(query)){
-                    search_result.append(key);
-                }
-            }
-            show_search_results(search_result);
-        });
-    }
-
     
-    function show_search_results(search_result){
-        console.log(search_result);
-
-    }
-    function search(){
-        var query = $('.search-query').val();
-        readFromDatabase(query);
-    }
     $('.search-submit').click(function(){
-        search();
-    })
+        var query = $('.search-query').val();
+        window.location.replace("search_result.html?query=" + query);
+        
+    });
 
 });
