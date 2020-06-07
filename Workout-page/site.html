@@ -102,6 +102,23 @@
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>  
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBs5aJhECS8s1bspUxdVk-hJH7FrlasDwc",
+        authDomain: "hci-project-817b4.firebaseapp.com",
+        databaseURL: "https://hci-project-817b4.firebaseio.com",
+        projectId: "hci-project-817b4",
+        storageBucket: "hci-project-817b4.appspot.com",
+        messagingSenderId: "1084392647243",
+        appId: "1:1084392647243:web:b8d31ad3108e563cd23bce",
+        measurementId: "G-D6VMGFT1W2"
+      };
+    // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  
     <script src="./workout.js"></script>
   </body>
 </html>

@@ -1,16 +1,3 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyBs5aJhECS8s1bspUxdVk-hJH7FrlasDwc",
-    authDomain: "hci-project-817b4.firebaseapp.com",
-    databaseURL: "https://hci-project-817b4.firebaseio.com",
-    projectId: "hci-project-817b4",
-    storageBucket: "hci-project-817b4.appspot.com",
-    messagingSenderId: "1084392647243",
-    appId: "1:1084392647243:web:b8d31ad3108e563cd23bce",
-    measurementId: "G-D6VMGFT1W2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
 //retrieve info from url
 window.onload = function () {
@@ -26,7 +13,7 @@ window.onload = function () {
     
 }
 
-
+var id;
 hist=[];
 let e ={
     'first':'exercise1',
@@ -39,9 +26,16 @@ let g ={
     'third': "2 reps"
 }
 function FillTables(name, number_of_tables, category, description, rating){
+    firebase.database().ref().child(name).child("id").once("value").then(function(ds){
+        id = ds.val();
+        console.log(id);
+
+    })
     firebase.database().ref(name+"/Day1").once('value', function( snapshot){
+        
         var myValue = snapshot.val();
         var KeyList = Object.keys(myValue);
+
         var table1 = document.getElementById("table1")
         if(number_of_tables==1){
             document.getElementById("table1-title").innerHTML = "Training Day"
@@ -230,13 +224,7 @@ function get_freq(){
 };
 var buton = document.getElementById("atml");
 var buto = document.getElementById("gtml");
-buton.onclick= function(){
-    buton.innerHTML = "Added to my list";
-    buton.className = "addedbut"
-    buton.disabled = true;
-    buto.innerHTML = "Go to my list";
-    buto.style.display = "block";
-}
+
 get_freq();
 //FillSento("Zac Efron's \"Baywatch\" Workout");
 //FillSento("Woodley's UFC title workout");
@@ -248,3 +236,36 @@ FillSento("Alexanda Daddario's Full-Body Workout");
 //FillTables("Cristiano Ronaldo's workout routine", 5);
 FillTables("Alexanda Daddario's Full-Body Workout", 1);
 //FillTables("Travis Stevens' Weight Lifting Program", 3);
+
+
+buton.onclick= function(){
+    async function f(){
+        let user = await firebase.auth().currentUser;
+        if (!user) return;
+        return user.uid;
+    }
+    f().then(function(uid){
+        if (!uid) return;
+        buton.innerHTML = "Added to my list";
+        buton.className = "addedbut"
+        buton.disabled = true;
+        buto.innerHTML = "Go to my list";
+        buto.style.display = "block";
+        firebase.database().ref().child("users").child(uid).update({
+            workout: id
+        })
+    });
+    
+}
+firebase.auth().onAuthStateChanged(function(user){
+    if (user){
+        firebase.database().ref().child("users").child(user.uid).child("workout").once("value").then(function(ds){
+            console.log(ds.val());
+            if (ds.val() == id){
+                buton.innerHTML = "Added to my list";
+                buton.className = "addedbut"
+                buton.disabled = true;
+            }
+        })
+    }
+})
