@@ -27,8 +27,8 @@ let g ={
 }
 function FillTables(name, number_of_tables, category, description, rating){
     firebase.database().ref().child(name).child("id").once("value").then(function(ds){
-        id = ds.val();
-        console.log(id);
+        id = name;
+        console.log(name);
 
     })
     firebase.database().ref(name+"/Day1").once('value', function( snapshot){
