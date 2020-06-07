@@ -151,3 +151,16 @@ footer .menu a{
 
 
 
+table{
+    border-collapse: collapse;
+    font-size: large;
+}
+td,th{
+    text-align: left;
+    padding: 4px;
+    min-width: 120px;
+}
+tr:not(:first-child){
+    border-bottom: 2px solid rgb(82, 11, 1);
+    border-top: 2px solid rgb(82, 11, 1);
+}
