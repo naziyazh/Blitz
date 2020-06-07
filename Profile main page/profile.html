@@ -23,6 +23,7 @@
             <a class="nav-item nav-link text-light" href="">Contact Us</a>
           </div>
         </div>
+        
         <form class="form-inline my-2 my-lg-0">
           <a href="../Profile main page/profile.html"><img src="images/avatar.png"></a>
           <button id="btn3" class="btn btn-secondary my-2 mx-5 my-sm-0" type="button"  onclick="signOut()">Log Out</button>
@@ -44,7 +45,7 @@
         <div class="profile">
             <img src="images/avatar.png">
             <div class="profile-text">
-                <h1 id="profile-username">Kim Jimin</h1>
+                <h1 id="profile-username"></h1>
                 <a href="#" id="edit-profile">Edit Profile</a>
             </div>
         </div>
@@ -95,5 +96,33 @@
             </div>
     </footer>
     <!--footer  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+    
+    <script src="/__/firebase/init.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBs5aJhECS8s1bspUxdVk-hJH7FrlasDwc",
+          authDomain: "hci-project-817b4.firebaseapp.com",
+          databaseURL: "https://hci-project-817b4.firebaseio.com",
+          projectId: "hci-project-817b4",
+          storageBucket: "hci-project-817b4.appspot.com",
+          messagingSenderId: "1084392647243",
+          appId: "1:1084392647243:web:b8d31ad3108e563cd23bce",
+          measurementId: "G-D6VMGFT1W2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var database = firebase.database();
+        var auth = firebase.auth();
+      </script>
+      <script src="retrieve.js"></script>
 </body>
 </html>
