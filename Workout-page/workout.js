@@ -265,6 +265,8 @@ firebase.auth().onAuthStateChanged(function(user){
                 buton.innerHTML = "Added to my list";
                 buton.className = "addedbut"
                 buton.disabled = true;
+                buto.innerHTML = "Go to my list";
+                buto.style.display = "block";
             }
         })
     }
