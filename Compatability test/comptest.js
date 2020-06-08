@@ -12,7 +12,7 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-var routinee="";
+var routinee;
   window.onload = function () {
     var url = document.location.href,
         params = url.split('?')[1].split('&'),
@@ -21,15 +21,21 @@ var routinee="";
          tmp = params[i].split('=');
          data[tmp[0]] = tmp[1];
     }
-    routinee = data.query;
-    console.log(routinee);
+    query = data.query;
+    console.log(query);
+    var novq = query.replace(/%20/g, " ");
+    var ovqq = novq.replace(/%22/g,"\"");
+    var nnovq = ovqq.replace(/%27/g, "'");
+    console.log(nnovq);
+    fillcomptest(nnovq);
 }
 
-
+var id;
 var nofq=0;
 var routine="";
 function fillcomptest(workout){
     routine = workout;
+    id=workout;
     firebase.database().ref(workout+"/Compatibility test").once('value', function( snapshot){
         document.getElementById("ti").innerHTML= "Compatibility test for <br>"+workout;
         var myValue = snapshot.val();
@@ -74,7 +80,7 @@ function clik(id, c, u){
 //fillcomptest("Zac Efron's \"Baywatch\" Workout");
 //fillcomptest("Woodley's UFC title workout");
 //fillcomptest("Cristiano Ronaldo's workout routine");
-fillcomptest(routinee);
+//fillcomptest(routinee);
 //fillcomptest("Travis Stevens' Weight Lifting Program");
 
 var addtmlb=document.getElementById("modbut")
@@ -117,9 +123,52 @@ window.onclick = function(event) {
     }
   }
 addtmlb.onclick = function(){
-    addtmlb.innerHTML = "Added to your list"
+  async function f(){
+    let user = await firebase.auth().currentUser;
+    if (!user) return;
+    return user.uid;
+  }
+  f().then(function(uid){
+    addtmlb.innerHTML = "Added to my list"
     addtmlb.disabled = true;
     addtmlb.className = "addedtmlb"
     gotob.innerHTML = "Go to my list"
     gotob.style.display ="block"
+    firebase.database().ref().child("users").child(uid).update({
+      workout: id
+    })
+  });
 }
+buton.onclick= function(){
+  async function f(){
+      let user = await firebase.auth().currentUser;
+      if (!user) return;
+      return user.uid;
+  }
+  f().then(function(uid){
+      if (!uid) return;
+      buton.innerHTML = "Added to my list";
+      buton.className = "addedbut"
+      buton.disabled = true;
+      buto.innerHTML = "Go to my list";
+      buto.style.display = "block";
+      firebase.database().ref().child("users").child(uid).update({
+          workout: id
+      })
+  });
+  
+}
+firebase.auth().onAuthStateChanged(function(user){
+  if (user){
+      firebase.database().ref().child("users").child(user.uid).child("workout").once("value").then(function(ds){
+          console.log(ds.val());
+          if (ds.val() == id){
+              addtmlb.innerHTML = "Added to my list";
+              addtmlb.className = "addedtmlb"
+              addtmlb.disabled = true;
+              gotob.innerHTML = "Go to my list";
+              gotob.style.display = "block";
+          }
+      })
+  }
+})
