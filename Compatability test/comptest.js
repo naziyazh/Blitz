@@ -14,16 +14,19 @@ var firebaseConfig = {
   firebase.analytics();
 var routinee;
   window.onload = function () {
-    var url = document.location.href;
-    console.log(url)
+    var url = document.location.href,
         params = url.split('?')[1].split('&'),
         data = {}, tmp;
     for (var i = 0, l = params.length; i < l; i++) {
          tmp = params[i].split('=');
          data[tmp[0]] = tmp[1];
     }
-    routinee = data.query;
-    console.log(routinee);
+    query = data.query;
+    console.log(query);
+    var novq = query.replace(/%20/g, " ");
+    var nnovq = novq.replace(/%27/g, "'");
+    console.log(nnovq);
+    fillcomptest(nnovq);
 }
 
 

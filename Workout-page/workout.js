@@ -24,8 +24,7 @@ window.onload = function () {
         FillTables(nnovq, num);});
     var CompBut = document.getElementById("CompBut");
     CompBut.onclick =function(){
-        window.location.replace=("../Compatability test/compatability.html?query=" + nnovq); 
-        console.log("wow Compbut")
+        window.location= "../Compatability%20test/compatability.html?query=" + nnovq 
     }    
 }
 var id;
