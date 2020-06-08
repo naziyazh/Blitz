@@ -17,7 +17,7 @@ $( document ).ready(function() {
     
     $('.search-submit').click(function(){
         var query = $('.search-query').val();
-        if (query.trim() !== ""){
+        if (query.trim().length > 0){
             window.location.replace("main-page/search_result.html?query=" + query);
         }
         
