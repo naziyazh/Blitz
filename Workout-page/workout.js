@@ -229,12 +229,12 @@ get_freq();
 //FillSento("Zac Efron's \"Baywatch\" Workout");
 //FillSento("Woodley's UFC title workout");
 //FillSento("Cristiano Ronaldo's workout routine");
-FillSento("Alexanda Daddario's Full-Body Workout");
+//FillSento("Alexanda Daddario's Full-Body Workout");
 //FillSento("Travis Stevens' Weight Lifting Program");
 //FillTables("Zac Efron's \"Baywatch\" Workout", 3);
 //FillTables("Woodley's UFC title workout", 1);
 //FillTables("Cristiano Ronaldo's workout routine", 5);
-FillTables("Alexanda Daddario's Full-Body Workout", 1);
+//FillTables("Alexanda Daddario's Full-Body Workout", 1);
 //FillTables("Travis Stevens' Weight Lifting Program", 3);
 
 

@@ -11,6 +11,13 @@ window.onload = function () {
     
 }
 
+$('.search-submit').on('click', function(){
+    var query = $('.search-query').val();
+    window.location.replace("search_result.html?query=" + query);
+});
+
+
+
 function search(query){
     $('.search-query').textContent = query;
     var search_result = [];
@@ -48,13 +55,18 @@ function show_search_results(query, search_result){
 
         searchResult.className = "search-result";
         see_more.className += "btn btn-dark px-5 mb-2";
-        see_more.className += "seemore";
+        see_more.className += " seemore";
         see_more.textContent = "See more";
+
 
         
         heading.textContent = search_result[i][0];
         description.textContent = search_result[i][1];
         searchResult.append(heading, description, see_more);
+        $(see_more).click(function(){
+            var program = heading.textContent.replace(/\s+/g, '');
+            window.location.replace("../Workout-page/site.html?query=" + program); 
+        });
         if (i !== search_result.length - 1){
             searchResult.append(document.createElement("hr"));
         }
@@ -62,17 +74,6 @@ function show_search_results(query, search_result){
     }
 }
 
-$( document ).ready(function() {
-    document.querySelector('.seemore').addEVentListener('click', function(){
-        var program = this.parentElement.firstChild;
-        console.log(program);
-        window.location.replace("../Workout-page/site.html?query=" + program); 
-    });
-
-    $('.search-submit').click(function(){
-        var query = $('.search-query').val();
-        window.location.replace("search_result.html?query=" + query);
-    });
-});
+   
     
 
