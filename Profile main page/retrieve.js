@@ -26,26 +26,44 @@ firebase.auth().onAuthStateChanged(function(user){
                     var body = document.getElementById("workouts");
                     var title = document.createElement("h1");
                     title.innerHTML = workout;
-                    title.style.fontSize = "20px"
+                    title.style.fontSize = "25px";
                     body.appendChild(title);
                     for (var i = 0; i < tables.length; i++){
-                        var table = document.createElement("table");
+                        
+                        
+                        
                         console.log(tables[i]);
+                        
+                        
                         firebase.database().ref().child(workout).child("Day" + tables[i]).once('value').then(function(ds){
+                            var table = document.createElement("table");
                             var objects = Object.keys(ds.val());
+                            var h = document.createElement("h2");
+
+                            h.innerHTML = "Day " + ds.key.charAt(3);
+                            if (tables.length == 1){
+                                h.innerHTML = "Training Day";
+                            }
+                            h.style.fontSize = "25px";
+                            body.appendChild(h);
                             var j = 0;
                             objects.forEach(function(key){
                                 var row = table.insertRow(j);
                                 j++;
                                 var cellFirst = row.insertCell();
+                                cellFirst.className = "first";
                                 var cellSecond = row.insertCell();
+                                cellSecond.className = "second";
+                                if(ds.val()[key]["first"].includes("Superset") || ds.val()[key]["first"].includes("Circuit") || ds.val()[key]["first"].includes("AMRAP")){
+                                    cellFirst.style.fontWeight = "bold";
+                                }
                                 cellFirst.innerHTML = ds.val()[key]["first"];
                                 cellSecond.innerHTML = ds.val()[key]["second"];
                             });
                             
                             document.getElementById("nothing").style.display = "none";
                             document.getElementById("explore").style.display = "none";
-                            body.appendChild(table);
+                            h.appendChild(table);
                         })
                         
                     }

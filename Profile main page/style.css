@@ -12,7 +12,11 @@ body {
 nav {
     background-color: #343F4B;
 }
-
+h2 {
+    padding-top: 50px;
+    text-align: center;
+    
+}
 .navbar-nav{
     font-size: 1.1rem;
 }
@@ -158,9 +162,15 @@ table{
 td,th{
     text-align: left;
     padding: 4px;
-    min-width: 120px;
+    
 }
-tr:not(:first-child){
+.first{
+    width: 300px;
+}
+.second{
+    width: 150px;
+}
+tr{
     border-bottom: 2px solid rgb(82, 11, 1);
     border-top: 2px solid rgb(82, 11, 1);
 }
