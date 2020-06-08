@@ -24,16 +24,18 @@ var routinee;
     query = data.query;
     console.log(query);
     var novq = query.replace(/%20/g, " ");
-    var nnovq = novq.replace(/%27/g, "'");
+    var ovqq = novq.replace(/%22/g,"\"");
+    var nnovq = ovqq.replace(/%27/g, "'");
     console.log(nnovq);
     fillcomptest(nnovq);
 }
 
-
+var id;
 var nofq=0;
 var routine="";
 function fillcomptest(workout){
     routine = workout;
+    id=workout;
     firebase.database().ref(workout+"/Compatibility test").once('value', function( snapshot){
         document.getElementById("ti").innerHTML= "Compatibility test for <br>"+workout;
         var myValue = snapshot.val();
@@ -121,9 +123,52 @@ window.onclick = function(event) {
     }
   }
 addtmlb.onclick = function(){
-    addtmlb.innerHTML = "Added to your list"
+  async function f(){
+    let user = await firebase.auth().currentUser;
+    if (!user) return;
+    return user.uid;
+  }
+  f().then(function(uid){
+    addtmlb.innerHTML = "Added to my list"
     addtmlb.disabled = true;
     addtmlb.className = "addedtmlb"
     gotob.innerHTML = "Go to my list"
     gotob.style.display ="block"
+    firebase.database().ref().child("users").child(uid).update({
+      workout: id
+    })
+  });
 }
+buton.onclick= function(){
+  async function f(){
+      let user = await firebase.auth().currentUser;
+      if (!user) return;
+      return user.uid;
+  }
+  f().then(function(uid){
+      if (!uid) return;
+      buton.innerHTML = "Added to my list";
+      buton.className = "addedbut"
+      buton.disabled = true;
+      buto.innerHTML = "Go to my list";
+      buto.style.display = "block";
+      firebase.database().ref().child("users").child(uid).update({
+          workout: id
+      })
+  });
+  
+}
+firebase.auth().onAuthStateChanged(function(user){
+  if (user){
+      firebase.database().ref().child("users").child(user.uid).child("workout").once("value").then(function(ds){
+          console.log(ds.val());
+          if (ds.val() == id){
+              addtmlb.innerHTML = "Added to my list";
+              addtmlb.className = "addedtmlb"
+              addtmlb.disabled = true;
+              gotob.innerHTML = "Go to my list";
+              gotob.style.display = "block";
+          }
+      })
+  }
+})

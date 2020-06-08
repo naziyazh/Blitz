@@ -13,7 +13,8 @@ window.onload = function () {
     query = data.query;
     console.log(query);
     var novq = query.replace(/%20/g, " ");
-    var nnovq = novq.replace(/%27/g, "'");
+    var ovqq = novq.replace(/%22/g,"\"")
+    var nnovq = ovqq.replace(/%27/g, "'");
     console.log(nnovq)
     FillSento(nnovq)
     firebase.database().ref().child(nnovq).once('value').then(function(ds){ 
