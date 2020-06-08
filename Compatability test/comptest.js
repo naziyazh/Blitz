@@ -12,6 +12,20 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+var routinee="";
+  window.onload = function () {
+    var url = document.location.href,
+        params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split('=');
+         data[tmp[0]] = tmp[1];
+    }
+    routinee = data.query;
+    console.log(routinee);
+}
+
+
 var nofq=0;
 var routine="";
 function fillcomptest(workout){
@@ -60,7 +74,7 @@ function clik(id, c, u){
 //fillcomptest("Zac Efron's \"Baywatch\" Workout");
 //fillcomptest("Woodley's UFC title workout");
 //fillcomptest("Cristiano Ronaldo's workout routine");
-fillcomptest("Alexanda Daddario's Full-Body Workout");
+fillcomptest(routinee);
 //fillcomptest("Travis Stevens' Weight Lifting Program");
 
 var addtmlb=document.getElementById("modbut")
