@@ -1,5 +1,6 @@
 
 //retrieve info from url
+var query;
 window.onload = function () {
     var url = document.location.href,
         params = url.split('?')[1].split('&'),
@@ -8,11 +9,25 @@ window.onload = function () {
          tmp = params[i].split('=');
          data[tmp[0]] = tmp[1];
     }
-    var query = data.query;
-    search(query);
-    
+    console.log(data)
+    query = data.query;
+    console.log(query);
+    var novq = query.replace(/%20/g, " ");
+    var nnovq = novq.replace(/%27/g, "'");
+    console.log(nnovq)
+    FillSento(nnovq)
+    firebase.database().ref().child(nnovq).once('value').then(function(ds){ 
+        var num = 0; 
+        for (var i = 1; i < 8; i++){ 
+            if (ds.child("Day" + i).exists()){ num++;} 
+        } 
+        FillTables(nnovq, num);});
+    var CompBut = document.getElementById("CompBut");
+    CompBut.onclick =function(){
+        window.location.replace=("../Compatability test/compatability.html?query=" + nnovq); 
+        console.log("wow Compbut")
+    }    
 }
-
 var id;
 hist=[];
 let e ={
@@ -214,29 +229,20 @@ function FillSento(name){
     }
     else{document.getElementById("fotka").innerHTML = "<img class=\"profile-photo-of-role-model\"src=\"./images/"+name+".jpg\" alt=\"Photo\">"}
 }
-var freq = 0;
-function get_freq(){
-    return firebase.database().ref(name+"/Frequency").once('value',function(snapshot){
-        let myValue = snapshot.val();
-        freq = myValue;
-        console.log(freq);
-    })
-};
 var buton = document.getElementById("atml");
 var buto = document.getElementById("gtml");
 
-get_freq();
 //FillSento("Zac Efron's \"Baywatch\" Workout");
-FillSento("Woodley's UFC title workout");
+//FillSento("Woodley's UFC title workout");
 //FillSento("Cristiano Ronaldo's workout routine");
 //FillSento("Alexanda Daddario's Full-Body Workout");
 //FillSento("Travis Stevens' Weight Lifting Program");
 //FillTables("Zac Efron's \"Baywatch\" Workout", 3);
-FillTables("Woodley's UFC title workout", 1);
+//FillTables("Woodley's UFC title workout", 1);
 //FillTables("Cristiano Ronaldo's workout routine", 5);
 //FillTables("Alexanda Daddario's Full-Body Workout", 1);
 //FillTables("Travis Stevens' Weight Lifting Program", 3);
-
+//FillSento(nnovq)
 
 buton.onclick= function(){
     async function f(){
