@@ -13,7 +13,9 @@ window.onload = function () {
 
 $('.search-submit').on('click', function(){
     var query = $('.search-query').val();
-    window.location.replace("search_result.html?query=" + query);
+    if (query.trim().length > 0){
+        window.location.replace("search_result.html?query=" + query);
+    }
 });
 
 
@@ -64,10 +66,12 @@ function show_search_results(query, search_result){
         description.textContent = search_result[i][1];
         searchResult.append(heading, description, see_more);
         $(see_more).click(function(){
+
             var program = heading.textContent//.replace(/\s+/g, '');
             //men
-            console.log(program)
+           // console.log(program)
             //men1
+
             window.location.replace("../Workout-page/site.html?query=" + program); 
         });
         if (i !== search_result.length - 1){

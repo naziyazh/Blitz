@@ -10,6 +10,7 @@ window.onload = function () {
          tmp = params[i].split('=');
          data[tmp[0]] = tmp[1];
     }
+
     console.log(data)
     query = data.query;
     console.log(query);
@@ -28,6 +29,7 @@ window.onload = function () {
     CompBut.onclick =function(){
         window.location= "../Compatability%20test/compatability.html?query=" + nnovq 
     }    
+
 }
 
 hist=[];
