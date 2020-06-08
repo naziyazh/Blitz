@@ -1,9 +1,18 @@
 
+
+var user;
+function editName(){
+    var h1 = document.getElementById("profile-username");
+    h1.contentEditable = "true";
+    var editButton = document.getElementById("edit-profile");
+    editButton.style.display = "none";
+    var changeButton = document.getElementById("change-profile");
+    changeButton.style.display = "block";
+    h1.focus();
+}
 function signOut(){
     firebase.auth().signOut();
-    window.location.replace("../main-page/index.html");
 }
-
 firebase.auth().onAuthStateChanged(function(user){
     user = user;
     if (user){
@@ -12,6 +21,8 @@ firebase.auth().onAuthStateChanged(function(user){
         var workout;
         firebase.database().ref().child("users").child(user.uid).once('value').then(function(ds){
             h1.innerHTML = ds.val()["firstName"];
+            var editButton = document.getElementById("edit-profile");
+            editButton.style.display = "block";
             if (ds.child("workout").exists()){
                 workout = ds.val()["workout"];
                 var tables = [];
@@ -24,6 +35,25 @@ firebase.auth().onAuthStateChanged(function(user){
                         }
                     }
                     var body = document.getElementById("workouts");
+                    var deleteButton = document.createElement("button");
+                    deleteButton.type = "button";
+                    deleteButton.innerHTML = "Remove this workout";
+                    
+                    deleteButton.onclick = function(){
+                        firebase.database().ref().child("users").child(user.uid).update({workout: null});
+                        body.innerHTML = "";
+                        var nothing = document.createElement("p");
+                        nothing.id = "nothing";
+                        nothing.className = "mb-4";
+                        nothing.innerHTML = "Nothing to see here...";
+                        var explore = document.createElement("a");
+                        explore.id = "explore";
+                        explore.href = "../index.html";
+                        explore.innerHTML = "Explore Workouts";
+                        body.appendChild(nothing);
+                        body.appendChild(explore);
+                    }
+                    body.appendChild(deleteButton);
                     var title = document.createElement("h1");
                     title.innerHTML = workout;
                     title.style.fontSize = "25px";
@@ -75,8 +105,20 @@ firebase.auth().onAuthStateChanged(function(user){
         
 
     }else{
-        window.location.replace("../main-page/index.html");
+        window.location.replace("../index.html");
     }
 })
 
 
+function changeName(){
+    var h1 = document.getElementById("profile-username");
+    var val = h1.innerHTML;
+    var editButton = document.getElementById("edit-profile");
+    var changeButton = document.getElementById("change-profile");
+    firebase.database().ref().child("users").child(firebase.auth().currentUser.uid).update({
+        firstName: val
+    });
+    editButton.style.display = "block";
+    changeButton.style.display = "none";
+    h1.contentEditable = "false";
+}
