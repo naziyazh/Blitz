@@ -13,7 +13,9 @@ window.onload = function () {
 
 $('.search-submit').on('click', function(){
     var query = $('.search-query').val();
-    window.location.replace("search_result.html?query=" + query);
+    if (query.trim() !== ""){
+        window.location.replace("search_result.html?query=" + query);
+    }
 });
 
 
