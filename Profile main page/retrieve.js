@@ -3,7 +3,9 @@ function signOut(){
     firebase.auth().signOut();
     window.location.replace("../main-page/index.html");
 }
-
+var routine;
+var ex1 = "No";
+var ex2 = "No";
 firebase.auth().onAuthStateChanged(function(user){
     user = user;
     if (user){
@@ -39,8 +41,9 @@ firebase.auth().onAuthStateChanged(function(user){
                             var table = document.createElement("table");
                             var objects = Object.keys(ds.val());
                             var h = document.createElement("h2");
+                            table.className = "simpleTable"
 
-                            h.innerHTML = "Day " + ds.key.charAt(3);
+                            h.innerHTML = "Day#" + ds.key.charAt(3);
                             if (tables.length == 1){
                                 h.innerHTML = "Training Day";
                             }
@@ -54,10 +57,45 @@ firebase.auth().onAuthStateChanged(function(user){
                                 cellFirst.className = "first";
                                 var cellSecond = row.insertCell();
                                 cellSecond.className = "second";
+                                var exercise=ds.val()[key]["first"];
+                                var alternative="No";
+                                var altsor1;
+                                var altsor2;
+                                var exor1;
+                                var exor2;
+                                firebase.database().ref(workout).child("altsOrExs").once('value', function( snapshot){
+                                    let myValue = snapshot.val();
+                                    let KeyList=Object.keys(myValue);
+                                    exor1 = KeyList[0];
+                                    exor2 = KeyList[1];
+                                    altsor1 = myValue[exor1];
+                                    altsor2 = myValue[exor2];
+
+                                })
                                 if(ds.val()[key]["first"].includes("Superset") || ds.val()[key]["first"].includes("Circuit") || ds.val()[key]["first"].includes("AMRAP")){
                                     cellFirst.style.fontWeight = "bold";
+                                    cellSecond.style.textAlign ="right";
+                                    cellFirst.innerHTML = ds.val()[key]["first"];
                                 }
-                                cellFirst.innerHTML = ds.val()[key]["first"];
+                                else{
+                                    firebase.database().ref("alternatives").once('value', function( snapshot){
+                                    var myValue = snapshot.val();
+                                    var KeyList = Object.keys(myValue);
+                                    for(let i=0; i<KeyList.length; i++){
+                                        var current = KeyList[i];
+                                        if(current == exercise){alternative = myValue[current]}
+                                    }
+                                    
+                                    if(alternative!="No"){
+                                        if(exor1 == exercise & altsor1 != exercise){cellFirst.innerHTML = "<select class = \"class-of-dropdown\"name=\"variants\" id=\""+exercise+"\" onchange = \"DropDownChange("+"&quot;"+workout+"&quot,"+"&quot;" +exercise+"&quot)\"><option value=\""+altsor1+"\">"+altsor1+"</option><option value=\""+exercise+"\">"+exercise+"</option></select>";}
+                                        else if(exor2 == exercise & altsor2 != exercise){cellFirst.innerHTML = "<select class = \"class-of-dropdown\"name=\"variants\" id=\""+exercise+"\" onchange = \"DropDownChange("+"&quot;"+workout+"&quot,"+"&quot;" +exercise+"&quot)\"><option value=\""+altsor2+"\">"+altsor2+"</option><option value=\""+exercise+"\">"+exercise+"</option></select>";}
+                                        else{cellFirst.innerHTML = "<select class = \"class-of-dropdown\"name=\"variants\" id=\""+exercise+"\" onchange = \"DropDownChange("+"&quot;"+workout+"&quot,"+"&quot;" +exercise+"&quot)\"><option value=\""+exercise+"\">"+exercise+"</option><option value=\""+alternative+"\">"+alternative+"</option></select>";
+                                        }
+                                    }
+                                    else{cellFirst.innerHTML = exercise}
+                                    })
+                                }
+                                
                                 cellSecond.innerHTML = ds.val()[key]["second"];
                             });
                             
@@ -78,5 +116,11 @@ firebase.auth().onAuthStateChanged(function(user){
         window.location.replace("../main-page/index.html");
     }
 })
+function DropDownChange(routine, key){
+    console.log(key)
+    let choice = document.getElementById(key).value;
+    console.log(choice)
+    firebase.database().ref(routine).child("altsOrExs").child(key).set(choice);
 
+}
 
