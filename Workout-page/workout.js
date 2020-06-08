@@ -1,6 +1,7 @@
 
 //retrieve info from url
 var query;
+var id;
 window.onload = function () {
     var url = document.location.href,
         params = url.split('?')[1].split('&'),
@@ -30,7 +31,7 @@ window.onload = function () {
     }    
 
 }
-var id;
+
 hist=[];
 let e ={
     'first':'exercise1',
@@ -43,11 +44,11 @@ let g ={
     'third': "2 reps"
 }
 function FillTables(name, number_of_tables, category, description, rating){
-    firebase.database().ref().child(name).child("id").once("value").then(function(ds){
+    
         id = name;
         console.log(name);
 
-    })
+    
     firebase.database().ref(name+"/Day1").once('value', function( snapshot){
         
         var myValue = snapshot.val();
@@ -269,13 +270,22 @@ firebase.auth().onAuthStateChanged(function(user){
     if (user){
         firebase.database().ref().child("users").child(user.uid).child("workout").once("value").then(function(ds){
             console.log(ds.val());
+            console.log("id : " + id);
             if (ds.val() == id){
+                buton.style.display = "block";
                 buton.innerHTML = "Added to my list";
                 buton.className = "addedbut"
                 buton.disabled = true;
                 buto.innerHTML = "Go to my list";
                 buto.style.display = "block";
             }
+            else{
+                buton.style.display = "block";
+                
+            }
         })
+    }else{
+        buton.style.display = "none";
+        buto.style.display = "none";
     }
 })
