@@ -9,8 +9,8 @@ window.onload = function () {
          data[tmp[0]] = tmp[1];
     }
     var query = data.query;
-    search(query);
-    
+    query = query.replace('%27', "'");
+    query = query.split('%20').join(' ');
 }
 
 var id;
