@@ -188,3 +188,11 @@ tr{
     padding-top: 30px;
     text-align: center;
 }
+
+#workouts{
+    padding-bottom: 40px;
+}
+
+#remove-workout-button{
+    margin: 20px auto;
+} 
