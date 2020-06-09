@@ -13,12 +13,11 @@ function editName(){
 function signOut(){
     firebase.auth().signOut();
 }
-<<<<<<< HEAD
+
 var routine;
 var ex1 = "No";
 var ex2 = "No";
-=======
->>>>>>> 5fb8918d53685098a5b796fe6322cac83817480d
+
 firebase.auth().onAuthStateChanged(function(user){
     user = user;
     if (user){
@@ -43,6 +42,10 @@ firebase.auth().onAuthStateChanged(function(user){
                     var body = document.getElementById("workouts");
                     var deleteButton = document.createElement("button");
                     deleteButton.type = "button";
+
+                    deleteButton.className = "btn btn-danger px-3 py-2";
+                    deleteButton.id =  "remove-workout-button";
+
                     deleteButton.innerHTML = "Remove this workout";
                     
                     deleteButton.onclick = function(){
@@ -59,10 +62,13 @@ firebase.auth().onAuthStateChanged(function(user){
                         body.appendChild(nothing);
                         body.appendChild(explore);
                     }
-                    body.appendChild(deleteButton);
+
+                    //body.appendChild(deleteButton);
+
                     var title = document.createElement("h1");
                     title.innerHTML = workout;
                     title.style.fontSize = "25px";
+                    title.id = "program-title";
                     body.appendChild(title);
                     for (var i = 0; i < tables.length; i++){
                         
@@ -136,25 +142,28 @@ firebase.auth().onAuthStateChanged(function(user){
                             document.getElementById("nothing").style.display = "none";
                             document.getElementById("explore").style.display = "none";
                             h.appendChild(table);
-                        })
+                            body.appendChild(deleteButton);
+                        });
                         
                     }
 
-                })
+                });
 
             }
-        })
+        });
         
 
     }else{
         window.location.replace("../index.html");
     }
-})
+
+});
 function DropDownChange(routine, key){
     console.log(key)
     let choice = document.getElementById(key).value;
     console.log(choice)
     firebase.database().ref(routine).child("altsOrExs").child(key).set(choice);
+
 
 }
 
