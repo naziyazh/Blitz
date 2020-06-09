@@ -18,7 +18,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav mx-auto">
-            <a class="nav-item nav-link mx-2 text-light" href="">Home</a>
+            <a class="nav-item nav-link mx-2 text-light" href="../index.html">Home</a>
             <a class="nav-item nav-link mx-2 text-light" href="">Featured</a>
             <a class="nav-item nav-link mx-2 text-light" href="">Contribute</a>
             <a class="nav-item nav-link text-light" href="">Contact Us</a>
@@ -47,7 +47,8 @@
             <img src="images/avatar.png">
             <div class="profile-text">
                 <h1 id="profile-username"></h1>
-                <a href="#" id="edit-profile">Edit Profile</a>
+                <button type="button" class="btn btn-primary my-2 my-sm-0 px-4" id="edit-profile" onclick="editName()" style="display:none;">Edit Profile</a>
+                <button type="button" class="btn btn-primary my-2 my-sm-0 px-4" id="change-profile" onclick="changeName()" style="display:none;">Change</a>
             </div>
         </div>
         <div class="workouts">
@@ -59,7 +60,7 @@
             <div class="tab">
                 <div id="workouts">
                     <p id="nothing" class="mb-4" style="display:block">Nothing to see here...</p>
-                    <a id="explore" href="../main-page/index.html" style="display: block">Explore workouts</a>
+                    <a id="explore" href="../index.html" style="display: block">Explore workouts</a>
                 </div>
             </div>
         </div>
