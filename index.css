@@ -8,11 +8,13 @@ body{
 
 }
 
+
 nav a img {
     width: 3rem;
     filter: invert(1);
     margin-right: 30px;
 }
+
 
 .navbar-nav{
     font-size: 1.1rem;
