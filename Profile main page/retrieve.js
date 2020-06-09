@@ -1,7 +1,7 @@
 
 function signOut(){
     firebase.auth().signOut();
-    window.location.replace("../main-page/index.html");
+    window.location.replace("../index.html");
 }
 
 firebase.auth().onAuthStateChanged(function(user){
@@ -27,6 +27,7 @@ firebase.auth().onAuthStateChanged(function(user){
                     var title = document.createElement("h1");
                     title.innerHTML = workout;
                     title.style.fontSize = "25px";
+                    title.id = "program-title";
                     body.appendChild(title);
                     for (var i = 0; i < tables.length; i++){
                         
@@ -75,7 +76,7 @@ firebase.auth().onAuthStateChanged(function(user){
         
 
     }else{
-        window.location.replace("../main-page/index.html");
+        window.location.replace("../index.html");
     }
 })
 
