@@ -37,6 +37,8 @@ firebase.auth().onAuthStateChanged(function(user){
                     var body = document.getElementById("workouts");
                     var deleteButton = document.createElement("button");
                     deleteButton.type = "button";
+                    deleteButton.className = "btn btn-danger px-3 py-2";
+                    deleteButton.id =  "remove-workout-button";
                     deleteButton.innerHTML = "Remove this workout";
                     
                     deleteButton.onclick = function(){
@@ -53,10 +55,11 @@ firebase.auth().onAuthStateChanged(function(user){
                         body.appendChild(nothing);
                         body.appendChild(explore);
                     }
-                    body.appendChild(deleteButton);
+                    //body.appendChild(deleteButton);
                     var title = document.createElement("h1");
                     title.innerHTML = workout;
                     title.style.fontSize = "25px";
+                    title.id = "program-title";
                     body.appendChild(title);
                     for (var i = 0; i < tables.length; i++){
                         
@@ -94,20 +97,21 @@ firebase.auth().onAuthStateChanged(function(user){
                             document.getElementById("nothing").style.display = "none";
                             document.getElementById("explore").style.display = "none";
                             h.appendChild(table);
-                        })
+                            body.appendChild(deleteButton);
+                        });
                         
                     }
 
-                })
+                });
 
             }
-        })
+        });
         
 
     }else{
         window.location.replace("../index.html");
     }
-})
+});
 
 
 function changeName(){
