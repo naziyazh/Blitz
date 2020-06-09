@@ -171,6 +171,7 @@ table{
 td,th{
     text-align: left;
     padding: 4px;
+    border: 2px solid rgb(82, 11, 1);
     
 }
 .first{
@@ -184,6 +185,42 @@ tr{
     border-top: 2px solid rgb(82, 11, 1);
 }
 
+
+
+
+.class-of-dropdown{
+    border: 0px;
+}
+
+/*.simpleTable{
+    border-collapse: collapse;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border-color: grey;
+    margin-left:auto; 
+    margin-right:auto;
+    width: 100%;
+} 
+.simpleTable td, .simpleTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.simpleTable tr:hover {background-color: #ddd;}
+.simpleTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+      }
+.bold-texted-td{
+        font-weight: bold;
+}
+.link-to-ex{
+        color: black;
+}
+.time-for-ex-or-set{
+        text-align: right;
+}*/
+
 #program-title{
     padding-top: 30px;
     text-align: center;
@@ -196,3 +233,4 @@ tr{
 #remove-workout-button{
     margin: 20px auto;
 } 
+
