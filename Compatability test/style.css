@@ -92,12 +92,10 @@ tr img {
     margin: 3px;
 }
 
-/*.truebut {
-    margin-left: 9rem;
-}
+
 .falsebut {
-    padding-right: 1px;
-}*/
+    width: 27px;
+} 
 
 
 #results {

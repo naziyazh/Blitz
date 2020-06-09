@@ -119,14 +119,16 @@ nav a img {
 }
 .table-title{
     text-align: center;
+    
 }
 .filt_table-title{
     text-align: center;
     margin-top: 70px;
 }
 .simpleTable td, .simpleTable th {
-        border: 1px solid #ddd;
+        border: 1px solid #dddddd;
         padding: 8px;
+        text-align: left;
 }
 .simpleTable tr:hover {background-color: #ddd;}
 .simpleTable th {
@@ -140,6 +142,7 @@ nav a img {
     margin-bottom: auto;
     width: 50%;
 }
+
 /* footer {
     display: flex;
     background-color: #47525E;
