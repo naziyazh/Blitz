@@ -98,14 +98,14 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   if(negresults>1){
-  document.getElementById("modtek").innerHTML="We think that it is better if you do another workout for a while, Now you are not quite ready for this"
+  document.getElementById("modtek").innerHTML="For now, this program may be too difficult for you. It is recommended to try another workout."
   modal.style.display = "block";
   addtmlb.style.display = "none";
   gotob.style.display ="none"
   
 }
   else{
-    document.getElementById("modtek").innerHTML="Congratulations!!! Most probably you are ready for "+routine;
+    document.getElementById("modtek").innerHTML="Congratulations! You seem to be qualified enough to do "+routine;
     modal.style.display = "block";
     addtmlb.style.display = "block";
     if(addtmlb.disabled==true){gotob.style.display = "block"}
