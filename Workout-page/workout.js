@@ -259,7 +259,7 @@ buton.onclick= function(){
         buton.className = "addedbut"
         buton.disabled = true;
         buto.innerHTML = "Go to my list";
-        buto.style.display = "block";
+        buto.style.display = "inline-block";
         firebase.database().ref().child("users").child(uid).update({
             workout: id
         })
@@ -272,15 +272,16 @@ firebase.auth().onAuthStateChanged(function(user){
             console.log(ds.val());
             console.log("id : " + id);
             if (ds.val() == id){
-                buton.style.display = "block";
+                //buton.style.display = "block";
                 buton.innerHTML = "Added to my list";
-                buton.className = "addedbut"
+                $(buton).css('font-size', '1rem');
+                buton.className = "addedbut px-3 py-2";
                 buton.disabled = true;
-                buto.innerHTML = "Go to my list";
-                buto.style.display = "block";
+                buto.innerHTML = "To my list";
+                buto.style.display = "inline-block";
             }
             else{
-                buton.style.display = "block";
+                buton.style.display = "inline-block";
                 
             }
         })
