@@ -158,16 +158,19 @@ footer .menu a{
   /* Modal Content */
   .modal-content {
     background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
+    /* margin: auto; */
     border: 1px solid #888;
-    width: 80%;
+    padding: 20px;
+  }
+
+  .modal-dialog{
+      width: 50%;
   }
   
   /* The Close Button */
-  .close {
+  /* .close {
     color: #aaaaaa;
-    float: right;
+    float: left; 
     font-size: 28px;
     font-weight: bold;
   }
@@ -177,7 +180,7 @@ footer .menu a{
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+  } */
   .button4 {
     margin: auto;
 }
