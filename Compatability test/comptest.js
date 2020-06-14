@@ -131,7 +131,7 @@ addtmlb.onclick = function(){
   f().then(function(uid){
     addtmlb.innerHTML = "Added to my list"
     addtmlb.disabled = true;
-    addtmlb.className = "addedtmlb"
+    addtmlb.className = "addedtmlb btn btn-secondary my-2 py-2"
     gotob.innerHTML = "Go to my list"
     gotob.style.display ="block"
     firebase.database().ref().child("users").child(uid).update({
