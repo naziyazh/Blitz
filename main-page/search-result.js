@@ -7,7 +7,7 @@ window.onload = function () {
          data[tmp[0]] = tmp[1];
     }
     var query = data.query;
-    query = query.replace("%20", " ");
+    query = query.replace(/%20/g, " ");
     search(query);
     
 }
