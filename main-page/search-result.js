@@ -29,7 +29,7 @@ function search(query){
         var keyList = Object.keys(myValue);
         for (i = 0; i < keyList.length; i++){
             var key = keyList[i];
-            if (key.toUpperCase().includes(query.toUpperCase())){
+            if (key.toUpperCase().includes(query.toUpperCase()) && key !== "alternatives" && key !== "users"){
                 var result = [];
                 result.push(key, myValue[key].Description);
                 search_result.push(result);
