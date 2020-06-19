@@ -29,6 +29,10 @@ nav a img {
     color: #8190A5;
 }
 
+#description-cards img:hover{
+    opacity: 0.5;
+}
+
 footer {
     background-color: #47525E;
     color: white;
