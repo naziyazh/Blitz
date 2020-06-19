@@ -290,3 +290,7 @@ firebase.auth().onAuthStateChanged(function(user){
         buto.style.display = "none";
     }
 })
+
+$('#logo').click(function(){
+    window.location.replace('../index.html');
+});

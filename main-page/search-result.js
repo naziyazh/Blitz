@@ -12,7 +12,9 @@
         
     }
 
-
+    $('#logo').click(function(){
+        window.location.replace('../index.html');
+    });
 
     $('.search-submit').on('click', function(){
         var query = $('.search-query').val();

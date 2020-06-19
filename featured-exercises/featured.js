@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+    $('#logo').click(function(){
+        window.location.replace('../index.html');
+    });
 
     function retrieve_from_database(){
         var result = [];

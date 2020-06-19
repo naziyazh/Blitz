@@ -173,6 +173,10 @@ firebase.auth().onAuthStateChanged(function(user){
               gotob.innerHTML = "Go to my list";
               gotob.style.display = "block";
           }
-      })
+      });
   }
-})
+});
+
+$('#logo').click(function(){
+  window.location.replace('../index.html');
+});
