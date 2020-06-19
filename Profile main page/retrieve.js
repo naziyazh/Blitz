@@ -47,8 +47,10 @@ firebase.auth().onAuthStateChanged(function(user){
                     deleteButton.id =  "remove-workout-button";
 
                     deleteButton.innerHTML = "Remove this workout";
-                    
-                    deleteButton.onclick = function(){
+                    $(deleteButton).attr("data-toggle", "modal");
+                    $(deleteButton).attr("data-target", "#remove");
+
+                    $('.remove-confirm').onclick = function(){
                         firebase.database().ref().child("users").child(user.uid).update({workout: null});
                         body.innerHTML = "";
                         var nothing = document.createElement("p");
@@ -178,4 +180,5 @@ function changeName(){
     editButton.style.display = "block";
     changeButton.style.display = "none";
     h1.contentEditable = "false";
+
 }
