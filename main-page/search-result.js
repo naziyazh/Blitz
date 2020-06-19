@@ -18,11 +18,17 @@ $('.search-submit').on('click', function(){
         window.location.replace("search_result.html?query=" + query);
     }
 });
-
+$('.search-query').keydown(function(){
+    if (event.keyCode === 13) {
+        event.stopImmediatePropagation();
+        $(".search-submit").trigger('click');
+      }
+    
+});
 
 
 function search(query){
-    $('.search-query').textContent = query;
+    $('.search-query').val(query);
     var search_result = [];
     return firebase.database().ref().once('value', function(snapshot) {
         var myValue = snapshot.val();

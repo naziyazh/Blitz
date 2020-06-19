@@ -22,16 +22,16 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav mx-auto">
             <a class="nav-item nav-link mx-2 text-light" href="index.html">Home</a>
-            <a class="nav-item nav-link mx-2 text-light" href="">Featured</a>
+            <a class="nav-item nav-link mx-2 text-light" href="featured-exercises/index.html">Featured</a>
             <a class="nav-item nav-link mx-2 text-light" href="">Contribute</a>
-            <a class="nav-item nav-link text-light" href="">Contact Us</a>
+            <a class="nav-item nav-link text-light" href="mailto:naziya@kaist.ac.kr">Contact Us</a>
           </div>
         </div>
         <form class="form-inline my-2 my-lg-0">
           <button id="btn1" class="btn btn-primary my-2 my-sm-0 px-4" type="button" data-toggle="modal" data-target="#register">Sign Up</button>
           <button id="btn2" class="btn btn-dark my-2 my-sm-0 login ml-4 px-4" type="button" data-toggle="modal" data-target="#login">Log In</button>
           <a id="btn4" href="Profile main page/profile.html" style="display:none;"><img src="Profile main page/images/avatar.png" width="50" height="50"></a>
-          <button id="btn3" class="btn btn-secondary my-2 my-sm-0" type="button" style="display: none;" onclick="signOut()">Log Out</button>
+          <button id="btn3" class="btn btn-secondary my-2 my-sm-0" type="button" style="display: none;"  data-toggle="modal" data-target ="#logout">Log Out</button>
           </form>
         </div>
       </nav>
@@ -41,7 +41,7 @@
           <h3 id="quote" class="text-white" id="routine_name">Action is the foundational key to all success.</h3>
           <div class="row">
               <div class="input-group ml-auto mr-auto col-md col-xl-6 mt-3">
-                <input type="text" class="form-control search-query" placeholder="Search workouts" aria-label="Search workouts" aria-describedby="basic-addon2">
+                <input type="text" class="form-control search-query" placeholder="Type the name of your role model. Example: Ronaldo" maxlength="30" aria-label="Search workouts" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-primary px-4 search-submit" type="button">Search</button>
                 </div>
@@ -125,19 +125,23 @@
         </button>
       </div>
       <div class="modal-body">
+        <!--place for alert-->
+        <div class="signup-alert alert-danger py-2" role="alert">
+          This is a danger alert—check it out!
+        </div>
         <!--    registration forms    -->
         <form>
           <div class="row">
             <div class="col">
-              <label for="first-name">First name:</label>
-              <input type="text" class="form-control" id="first-name" placeholder="First name">
+              <label for="first-name">Nickname:</label>
+              <input type="text" class="form-control" id="first-name" placeholder="Nickname">
             </div>
-            <div class="col">
+            <!-- <div class="col">
               <label for="last-name">Last name:</label>
               <input type="text" class="form-control" id="last-name" placeholder="Last name">
-            </div>
+            </div> -->
           </div>
-          <div class="form-group">
+          <div class="form-group pt-2">
             <label for="email">Email:</label>
             <input type="email" class="form-control" id="email1" placeholder="Email">
           </div>
@@ -169,6 +173,10 @@
         </button>
       </div>
       <div class="modal-body">
+        <!--place for alert-->
+        <div class="login-alert alert-danger py-2" role="alert">
+          This is a danger alert—check it out!
+        </div>
         <!--    registration forms    -->
         <form>
           <div class="form-group">
@@ -188,6 +196,28 @@
   </div>
 </div>
 <!--modal-->
+
+<!--signout alert-->
+<div class="modal" id = "logout" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Log Out</h5>
+        <button type="button" class="close" id = "logout-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to log out?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="logout-confirm btn btn-primary">Log Out</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--signout alert-->
 
 
 <!--modal-->    

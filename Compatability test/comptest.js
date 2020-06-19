@@ -139,6 +139,10 @@ addtmlb.onclick = function(){
     })
   });
 }
+
+$('logout-confirm').click(function(){
+  signOut();
+})
 buton.onclick= function(){
   async function f(){
       let user = await firebase.auth().currentUser;

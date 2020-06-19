@@ -1,0 +1,70 @@
+body {
+    font-family: 'Lato';
+
+}
+
+nav {
+    background-color: #343F4B;
+    max-height: 62px;
+}
+
+.navbar-nav{
+    font-size: 1.1rem;
+}
+
+nav a img {
+    width: 3rem;
+    filter: invert(1);
+}
+
+#page-container{
+    position: relative;
+    min-height: 100vh;
+    background-color:  rgba(150, 159, 170, 0.47);
+    padding-bottom: 256px;
+}
+#featured-container{
+    background-color: white;
+    border-radius: 10px;
+    margin: 2rem auto;
+    padding: 10px;
+    width: 60%;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+.see-more{
+    margin-left: 70%;
+}
+
+.role-models{
+    padding: 10px;
+}
+
+footer {
+    background-color: #47525E;
+    color: white;
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+
+}
+
+footer img {
+    width: 20px;
+    margin-left: 5px;
+}
+
+.socials,
+.menu li {
+   padding: 5px 5px;
+}
+
+
+footer .menu a{
+    color: #F7F7F7;
+    text-decoration: none;
+}
+
+

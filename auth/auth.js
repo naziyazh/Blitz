@@ -13,7 +13,6 @@ function closeForm(form) {
 
 function signUp(){
     var firstName = document.getElementById("first-name");
-    var lastName = document.getElementById("last-name");
     var email1 = document.getElementById("email1");
     var password1 = document.getElementById("password1");
     var repeat = document.getElementById("confirm-password");
@@ -22,7 +21,6 @@ function signUp(){
             firebase.database().ref().child("users").child(firebase.auth().currentUser.uid).set({
                 email: email1.value,
                 firstName: firstName.value,
-                lastName: lastName.value
             })
             email1.value = "";
             password1.value = "";
@@ -33,13 +31,17 @@ function signUp(){
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorMessage);
+            $('.signup-alert').text(errorMessage);
+            $('.signup-alert').css("display", "block");
             email1.value = "";
             password1.value = "";
             repeat.value = "";
             email1.focus();
         });
     }else{
-        console.log("Passwords do not match")
+        console.log("Passwords do not match");
+        $('.signup-alert').text("Passwords do not match");
+        $('.signup-alert').css("display", "block");
         password1.value = "";
         repeat.value = "";
         password1.focus();
@@ -59,6 +61,8 @@ function signIn(){
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
+        $('.login-alert').text(errorMessage);
+        $('.login-alert').css("display", "block");
         email2.value = "";
         password2.value = "";
         email2.focus();
@@ -68,6 +72,10 @@ function signIn(){
 function signOut(){
     firebase.auth().signOut();
 }
+$('.logout-confirm').click(function(){
+    signOut();
+    document.getElementById("logout-close").click();
+  })
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.

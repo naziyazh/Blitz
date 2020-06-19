@@ -23,4 +23,12 @@ $( document ).ready(function() {
         
     });
 
+    $('.search-query').keydown(function(){
+        if (event.keyCode === 13) {
+            event.stopImmediatePropagation();
+            $(".search-submit").trigger('click');
+          }
+        
+    });
+
 });
