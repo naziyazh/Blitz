@@ -37,7 +37,6 @@ $( document ).ready(function() {
         for (i = 0; i < result.length; i++){
             var col = document.createElement("div");
             var card = document.createElement("div");
-            var img_container = document.createElement('div');
             var img = document.createElement("img");
             var card_body = document.createElement("div");
             var heading  = document.createElement("a");
@@ -49,13 +48,11 @@ $( document ).ready(function() {
             heading.className = "card-title";
 
             $(img).attr("src", "img/" + result[i].toLowerCase() + ".jpg");
-            $(img_container).css("height", "70%");
             $(heading).attr("href", "../main-page/search_result.html?query=" + result[i]);
             heading.textContent = result[i];
 
             $(card_body).append(heading);
-            $(img_container).append(img);
-            $(card).append(img_container);
+            $(card).append(img);
             $(card).append(card_body);
             $(col).append(card);
                  

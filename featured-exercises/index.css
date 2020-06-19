@@ -67,4 +67,7 @@ footer .menu a{
     text-decoration: none;
 }
 
+.card-img-top{
+    filter: grayscale(50%);
+}
 
