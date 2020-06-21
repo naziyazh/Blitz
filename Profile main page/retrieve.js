@@ -186,4 +186,7 @@
     $('#logo').click(function(){
         window.location.replace('../index.html');
     });
-
+    $('.logout-confirm').click(function(){
+        signOut();
+        document.getElementById("logout-close").click();
+      })
