@@ -26,8 +26,10 @@
             </div>
             </div>
             <form class="form-inline my-2 my-lg-0">
-            <a href="../Profile main page/profile.html"><img src="../Profile main page/images/avatar.png"></a>
-            <button id="btn3" class="btn btn-secondary my-2 mx-5 my-sm-0" type="button"  onclick="signOut()">Log Out</button>
+              <button id="btn1" class="btn btn-primary my-2 my-sm-0 px-4" type="button" data-toggle="modal" data-target="#register">Sign Up</button>
+              <button id="btn2" class="btn btn-dark my-2 my-sm-0 login ml-4 px-4" type="button" data-toggle="modal" data-target="#login">Log In</button>
+              <a id="btn4" href="Profile main page/profile.html" style="display:none;"><img src="../Profile main page/images/avatar.png" width="50" height="50"></a>
+              <button id="btn3" class="btn btn-secondary my-2 my-sm-0" type="button" style="display: none;"  data-toggle="modal" data-target ="#logout">Log Out</button>
             </form>
             </div>
         </nav>
@@ -75,7 +77,111 @@
   </footer>
 </div>
   <!--footer  -->
-
+  <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+          <button type="button" id="closeReg" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--place for alert-->
+          <div class="signup-alert alert-danger py-2" role="alert">
+            This is a danger alert—check it out!
+          </div>
+          <!--    registration forms    -->
+          <form>
+            <div class="row">
+              <div class="col">
+                <label for="first-name">Nickname:</label>
+                <input type="text" class="form-control" id="first-name" placeholder="Nickname">
+              </div>
+              <!-- <div class="col">
+                <label for="last-name">Last name:</label>
+                <input type="text" class="form-control" id="last-name" placeholder="Last name">
+              </div> -->
+            </div>
+            <div class="form-group pt-2">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="password">Confirm your password:</label>
+              <input type="password" class="form-control" id="confirm-password" placeholder="Confirm">
+            </div>
+    
+          
+            <button type="button" class="btn btn-primary btn-large" onclick="signUp()">Sign Up</button>
+        </form>
+         <!--    registration forms    -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" id="closeLog" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--place for alert-->
+          <div class="login-alert alert-danger py-2" role="alert">
+            This is a danger alert—check it out!
+          </div>
+          <!--    registration forms    -->
+          <form>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email2" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password2" placeholder="Password">
+            </div>
+    
+            <button type="button" class="btn btn-primary btn-large" onclick="signIn()">Login</button>
+        </form>
+         <!--    registration forms    -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal-->
+  
+  <!--signout alert-->
+  <div class="modal" id = "logout" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Log Out</h5>
+          <button type="button" class="close" id = "logout-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to log out?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="logout-confirm btn btn-primary">Log Out</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--signout alert-->
+  
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -84,7 +190,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
     <script src = "featured.js"></script>
-    <script src="../auth/auth.js"></script>
+
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -103,5 +209,6 @@
         var database = firebase.database();
         var auth = firebase.auth();
       </script>
+    <script src="../auth/auth.js"></script>
   </body>
 </html>
