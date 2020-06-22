@@ -50,7 +50,7 @@
                         $(deleteButton).attr("data-toggle", "modal");
                         $(deleteButton).attr("data-target", "#remove");
 
-                        $('.remove-confirm').onclick = function(){
+                        $('#remove-confirm').click(function(){
                             firebase.database().ref().child("users").child(user.uid).update({workout: null});
                             body.innerHTML = "";
                             var nothing = document.createElement("p");
@@ -63,7 +63,8 @@
                             explore.innerHTML = "Explore Workouts";
                             body.appendChild(nothing);
                             body.appendChild(explore);
-                        }
+                            document.getElementById("remove-close").click();
+                        });
 
                         //body.appendChild(deleteButton);
 
